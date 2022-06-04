@@ -14,6 +14,14 @@ export default class Main extends Component {
     };
   }
 
+  setClass(event, typeEvent, key) {
+    if (event.key === key || typeEvent === 'touchend') {
+      this.setState(() => {
+        return { classMario: 'img-mario mario-jump' };
+      });
+    }
+  }
+
   render() {
     const { classMario, srcMario, srcPipe } = this.state;
 
