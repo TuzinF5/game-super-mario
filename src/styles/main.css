@@ -7,10 +7,10 @@
 
 .game-board {
   border: 1px solid #000000;
-  height: 500px;
+  height: 90vh;
   overflow: hidden;
   position: relative;
-  width: 80%;
+  width: 95%;
 }
 
 .img-mario {
