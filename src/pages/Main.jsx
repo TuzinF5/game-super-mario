@@ -14,12 +14,21 @@ export default class Main extends Component {
     };
   }
 
+  resetClass() {
+    setTimeout(() => {
+      this.setState(() => {
+        return { classMario: 'img-mario' };
+      });
+    }, 500);
+  }
+
   setClass(event, typeEvent, key) {
     if (event.key === key || typeEvent === 'touchend') {
       this.setState(() => {
         return { classMario: 'img-mario mario-jump' };
       });
     }
+    this.resetClass();
   }
 
   eventListener(typeEvent, key = null) {
