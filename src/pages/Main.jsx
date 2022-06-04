@@ -8,18 +8,19 @@ export default class Main extends Component {
     super();
 
     this.state = {
+      classMario: 'img-mario',
       srcMario: mario,
       srcPipe: pipe,
     };
   }
 
   render() {
-    const { srcMario, srcPipe } = this.state;
+    const { classMario, srcMario, srcPipe } = this.state;
 
     return (
       <main className="main-game">
         <section className="game-board">
-          <img className="img-mario" src={srcMario} alt="super mario" />
+          <img className={classMario} src={srcMario} alt="super mario" />
           <img className="img-pipe" src={srcPipe} alt="tubo super mario" />
         </section>
       </main>
