@@ -28,6 +28,11 @@ export default class Main extends Component {
     );
   }
 
+  componentDidMount() {
+    this.eventListener('keydown', 'ArrowUp');
+    this.eventListener('touchend');
+  }
+
   render() {
     const { classMario, srcMario, srcPipe } = this.state;
 
