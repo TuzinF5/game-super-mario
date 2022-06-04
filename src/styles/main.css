@@ -21,8 +21,19 @@
 }
 
 .img-pipe {
+  animation: pipe-animation 2s infinite linear;
   bottom: 0px;
   height: 80px;
   position: absolute;
   width: 80px;
+}
+
+@keyframes pipe-animation {
+  from {
+    right: -80px;
+  }
+
+  to {
+    right: 100%;
+  }
 }
