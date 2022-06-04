@@ -1,7 +1,6 @@
 .main-game {
-  align-items: center;
   display: flex;
-  height: 100vh;
+  height: 90vh;
   justify-content: center;
 }
 
@@ -10,7 +9,7 @@
   height: 90vh;
   overflow: hidden;
   position: relative;
-  width: 95%;
+  width: 90%;
 }
 
 .img-mario {
