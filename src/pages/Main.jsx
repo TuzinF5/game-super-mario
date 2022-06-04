@@ -22,6 +22,12 @@ export default class Main extends Component {
     }
   }
 
+  eventListener(typeEvent, key = null) {
+    window.addEventListener(typeEvent, (event) =>
+      this.setClass(event, typeEvent, key)
+    );
+  }
+
   render() {
     const { classMario, srcMario, srcPipe } = this.state;
 
