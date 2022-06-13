@@ -23,7 +23,7 @@ export default class Main extends Component {
       this.setState(() => {
         return { classMario: 'img-mario' };
       });
-    }, 500);
+    }, 800);
   }
 
   setClass(event, typeEvent, key) {

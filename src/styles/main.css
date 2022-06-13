@@ -30,11 +30,11 @@
 }
 
 .mario-jump {
-  animation: jump-animation 500ms ease-out;
+  animation: jump-animation 800ms ease-out;
 }
 
 .img-pipe {
-  animation: pipe-animation 2s infinite linear;
+  animation: pipe-animation 4s infinite linear;
   bottom: 0px;
   height: 80px;
   position: absolute;
