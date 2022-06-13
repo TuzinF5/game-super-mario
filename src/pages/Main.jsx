@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
+import imgClouds from '../images/clouds.png';
 import imgMario from '../images/mario.gif';
 import imgMarioGameOver from '../images/game-over.png';
 import imgPipe from '../images/pipe.png';
-import imgGrama from '../images/grama.gif';
 
 import '../styles/main.css';
 
@@ -12,7 +12,7 @@ export default class Main extends Component {
 
     this.state = {
       classMario: 'img-mario',
-      srcGrama: imgGrama,
+      srcClouds: imgClouds,
       srcMario: imgMario,
       srcPipe: imgPipe,
     };
@@ -44,14 +44,19 @@ export default class Main extends Component {
   checkImagePosition() {
     let pipe = document.querySelector('.img-pipe');
     let mario = document.querySelector('.img-mario');
+    let clouds = document.querySelector('.img-clouds');
 
     const interval = setInterval(() => {
+      let cloudsPosition = clouds.offsetLeft;
       let pipePosition = pipe.offsetLeft;
       let marioPosition = Number(
         window.getComputedStyle(mario).bottom.replace('px', '')
       );
 
       if (pipePosition <= 120 && pipePosition > 0 && marioPosition < 80) {
+        clouds.style.animation = 'none';
+        clouds.style.left = `${cloudsPosition}px`;
+
         pipe.style.animation = 'none';
         pipe.style.left = `${pipePosition}px`;
 
@@ -75,15 +80,15 @@ export default class Main extends Component {
   }
 
   render() {
-    const { classMario, srcGrama, srcMario, srcPipe } = this.state;
+    const { classMario, srcClouds, srcMario, srcPipe } = this.state;
 
     return (
       <>
         <main className="main-game">
           <section className="game-board">
+            <img className="img-clouds" src={srcClouds} alt="Nuvens" />
             <img className={classMario} src={srcMario} alt="super mario" />
             <img className="img-pipe" src={srcPipe} alt="tubo super mario" />
-            <img className="img-grama" src={srcGrama} alt="grama" />
           </section>
         </main>
         <footer>

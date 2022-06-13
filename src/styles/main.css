@@ -5,11 +5,20 @@
 }
 
 .game-board {
-  background: rgb(197,229,230);
-  background: linear-gradient(0deg, rgba(197,229,230,1) 0%, rgba(34,193,195,1) 100%);
+  background-image: url('../images/grama.gif');
+  background-position: bottom;
+  background-repeat: repeat-x;
+  background-size: 55px;
   overflow: hidden;
   position: relative;
   width: 100%;
+}
+
+.img-clouds {
+  animation: clouds-animation 20s infinite linear;
+  margin-top: 30px;
+  position: absolute;
+  width: 400px;
 }
 
 .img-mario {
@@ -17,6 +26,7 @@
   height: 150px;
   position: absolute;
   width: 150px;
+  z-index: -1;
 }
 
 .mario-jump {
@@ -29,13 +39,7 @@
   height: 80px;
   position: absolute;
   width: 80px;
-}
-
-.img-grama {
-  bottom: 0px;
-  height: 40px;
-  position: absolute;
-  width: 100%;
+  z-index: -1;
 }
 
 footer {
@@ -50,6 +54,16 @@ footer {
 
 p {
   color: #ffffff;
+}
+
+@keyframes clouds-animation {
+  from {
+    right: -400px;
+  }
+
+  to {
+    right: 100%;
+  }
 }
 
 @keyframes pipe-animation {
