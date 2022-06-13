@@ -5,6 +5,8 @@
 }
 
 .game-board {
+  background: rgb(197,229,230);
+  background: linear-gradient(0deg, rgba(197,229,230,1) 0%, rgba(34,193,195,1) 100%);
   overflow: hidden;
   position: relative;
   width: 100%;
