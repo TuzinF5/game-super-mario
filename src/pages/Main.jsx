@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import imgMario from '../images/mario.gif';
 import imgMarioGameOver from '../images/game-over.png';
 import imgPipe from '../images/pipe.png';
+import imgGrama from '../images/grama.gif';
+
 import '../styles/main.css';
 
 export default class Main extends Component {
@@ -10,6 +12,7 @@ export default class Main extends Component {
 
     this.state = {
       classMario: 'img-mario',
+      srcGrama: imgGrama,
       srcMario: imgMario,
       srcPipe: imgPipe,
     };
@@ -72,15 +75,18 @@ export default class Main extends Component {
   }
 
   render() {
-    const { classMario, srcMario, srcPipe } = this.state;
+    const { classMario, srcGrama, srcMario, srcPipe } = this.state;
 
     return (
-      <main className="main-game">
-        <section className="game-board">
-          <img className={classMario} src={srcMario} alt="super mario" />
-          <img className="img-pipe" src={srcPipe} alt="tubo super mario" />
-        </section>
-      </main>
+      <>
+        <main className="main-game">
+          <section className="game-board">
+            <img className={classMario} src={srcMario} alt="super mario" />
+            <img className="img-pipe" src={srcPipe} alt="tubo super mario" />
+            <img className="img-grama" src={srcGrama} alt="grama" />
+          </section>
+        </main>
+      </>
     );
   }
 }
