@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import imgMario from '../images/mario.gif';
+import imgMarioGameOver from '../images/game-over.png';
 import imgPipe from '../images/pipe.png';
 import '../styles/main.css';
 
@@ -37,9 +38,37 @@ export default class Main extends Component {
     );
   }
 
+  checkImagePosition() {
+    let pipe = document.querySelector('.img-pipe');
+    let mario = document.querySelector('.img-mario');
+
+    const interval = setInterval(() => {
+      let pipePosition = pipe.offsetLeft;
+      let marioPosition = Number(
+        window.getComputedStyle(mario).bottom.replace('px', '')
+      );
+
+      if (pipePosition <= 120 && pipePosition > 0 && marioPosition < 80) {
+        pipe.style.animation = 'none';
+        pipe.style.left = `${pipePosition}px`;
+
+        mario.style.animation = 'none';
+        mario.style.bottom = `${marioPosition}px`;
+
+        mario.src = imgMarioGameOver;
+        mario.style.width = '75px';
+        mario.style.height = '105px';
+        mario.style.marginLeft = '40px';
+
+        clearInterval(interval);
+      }
+    }, 1);
+  }
+
   componentDidMount() {
     this.eventListener('keydown', 'ArrowUp');
     this.eventListener('touchend');
+    this.checkImagePosition();
   }
 
   render() {
