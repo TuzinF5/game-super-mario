@@ -86,6 +86,9 @@ export default class Main extends Component {
             <img className="img-grama" src={srcGrama} alt="grama" />
           </section>
         </main>
+        <footer>
+          <p>Desenvolvido por Arthur Teixeira</p>
+        </footer>
       </>
     );
   }
