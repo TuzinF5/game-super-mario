@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import mario from '../images/mario.gif';
-import pipe from '../images/pipe.png';
+import imgMario from '../images/mario.gif';
+import imgPipe from '../images/pipe.png';
 import '../styles/main.css';
 
 export default class Main extends Component {
@@ -9,8 +9,8 @@ export default class Main extends Component {
 
     this.state = {
       classMario: 'img-mario',
-      srcMario: mario,
-      srcPipe: pipe,
+      srcMario: imgMario,
+      srcPipe: imgPipe,
     };
   }
 
